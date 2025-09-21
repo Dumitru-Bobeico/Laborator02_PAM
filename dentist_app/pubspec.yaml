@@ -21,3 +21,5 @@ flutter:
   assets:
     - assets/Image01.png
     - assets/Image02.png
+    - assets/profile.png
+    - assets/notification.png

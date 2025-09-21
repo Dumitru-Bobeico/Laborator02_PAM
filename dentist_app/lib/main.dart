@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 24,
-                    backgroundImage: AssetImage('assets/images/profile.jpg'),
+                    backgroundImage: AssetImage('assets/profile.png'),
                   ),
                   SizedBox(width: 12),
                   Column(
@@ -46,7 +46,13 @@ class MainApp extends StatelessWidget {
                   ),
                 ],
               ),
-              Icon(Icons.menu),
+              IconButton(
+                icon: Image.asset('assets/notification.png'),
+                onPressed: () {
+                  // Add your button action here
+                  print('Notification button pressed');
+                },
+              ),
             ],
           ),
         ),
