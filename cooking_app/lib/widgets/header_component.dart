@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../resources/colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HeaderComponent extends StatelessWidget {
-  const HeaderComponent({Key? key}) : super(key: key);
+  const HeaderComponent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      padding: const EdgeInsets.all(24.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -15,54 +18,37 @@ class HeaderComponent extends StatelessWidget {
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
                     'Hello Jega',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.poppins(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                   SizedBox(height: 4),
                   Text(
                     'What are you cooking today?',
-                    style: TextStyle(color: Colors.grey, fontSize: 16),
+                    style: GoogleFonts.poppins(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.neutralGray3,
+                    ),
                   ),
                 ],
               ),
-              const CircleAvatar(
-                radius: 24,
-                backgroundImage: AssetImage(
-                  'assets/images/jega.jpg',
-                ), // Replace with your image asset
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  color: AppColors.secondary40,
+                  child: Image(image: AssetImage('images/profile_picture.png')),
+                ),
               ),
             ],
           ),
           const SizedBox(height: 20),
-          Row(
-            children: [
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(Icons.search),
-                    hintText: 'Search recipe',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide.none,
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                  ),
-                ),
-              ),
-              const SizedBox(width: 10),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                padding: const EdgeInsets.all(12),
-                child: const Icon(Icons.filter_list, color: Colors.white),
-              ),
-            ],
-          ),
         ],
       ),
     );
