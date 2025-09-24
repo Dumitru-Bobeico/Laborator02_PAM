@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../resources/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HeaderComponent extends StatelessWidget {
   const HeaderComponent({super.key});
@@ -43,7 +42,7 @@ class HeaderComponent extends StatelessWidget {
                   width: 48,
                   height: 48,
                   color: AppColors.secondary40,
-                  child: Image(image: AssetImage('images/profile_picture.png')),
+                  child: Image.asset('images/profile_picture.png'),
                 ),
               ),
             ],

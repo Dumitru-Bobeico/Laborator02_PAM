@@ -1,3 +1,4 @@
+import 'package:cooking_app/widgets/searchbar_component.dart';
 import 'package:flutter/material.dart';
 import '../widgets/header_component.dart';
 
@@ -8,7 +9,9 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(child: Column(children: [HeaderComponent()])),
+      body: SafeArea(
+        child: Column(children: [HeaderComponent(), SearchBarComponent()]),
+      ),
     );
   }
 }
