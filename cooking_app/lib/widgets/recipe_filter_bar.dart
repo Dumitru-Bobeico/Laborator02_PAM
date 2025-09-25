@@ -38,10 +38,7 @@ class _RecipeFilterBarState extends State<RecipeFilterBar> {
                 widget.onSelected?.call(category);
               },
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   color: isSelected ? AppColors.primary100 : AppColors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -54,8 +51,9 @@ class _RecipeFilterBarState extends State<RecipeFilterBar> {
                   child: Text(
                     category,
                     style: TextStyle(
+                      fontFamily: 'Poppins',
                       fontSize: 13,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
                       color: isSelected
                           ? AppColors.white
                           : AppColors.primary100,

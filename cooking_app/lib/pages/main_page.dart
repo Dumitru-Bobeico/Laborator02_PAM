@@ -1,3 +1,5 @@
+import 'package:cooking_app/widgets/recipe_card.dart';
+import 'package:cooking_app/widgets/recipe_card_showcase.dart';
 import 'package:cooking_app/widgets/searchbar_component.dart';
 import 'package:flutter/material.dart';
 import '../widgets/header_component.dart';
@@ -9,7 +11,7 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: Column(
@@ -31,6 +33,8 @@ class MainPage extends StatelessWidget {
                 "Local Dishes",
               ],
             ),
+            SizedBox(height: 15),
+            RecipeCardShowcase(),
           ],
         ),
       ),
