@@ -1,1 +1,72 @@
+import 'package:cooking_app/resources/colors.dart';
+import 'package:flutter/material.dart';
 
+class RecipeFilterBar extends StatefulWidget {
+  final List<String> categories;
+  final ValueChanged<String>? onSelected;
+
+  const RecipeFilterBar({Key? key, required this.categories, this.onSelected})
+    : super(key: key);
+
+  @override
+  State<RecipeFilterBar> createState() => _RecipeFilterBarState();
+}
+
+class _RecipeFilterBarState extends State<RecipeFilterBar> {
+  String selectedCategory = "All";
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(top: 10),
+      child: SizedBox(
+        height: 40,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: widget.categories.length,
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          separatorBuilder: (_, __) => const SizedBox(width: 10),
+          itemBuilder: (context, index) {
+            final category = widget.categories[index];
+            final isSelected = category == selectedCategory;
+
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedCategory = category;
+                });
+                widget.onSelected?.call(category);
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                decoration: BoxDecoration(
+                  color: isSelected ? AppColors.primary100 : AppColors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: isSelected ? AppColors.primary100 : AppColors.white,
+                    width: 1.2,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    category,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: isSelected
+                          ? AppColors.white
+                          : AppColors.primary100,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
