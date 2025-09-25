@@ -1,4 +1,3 @@
-import 'package:cooking_app/widgets/recipe_card.dart';
 import 'package:cooking_app/widgets/recipe_card_showcase.dart';
 import 'package:cooking_app/widgets/searchbar_component.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +34,7 @@ class MainPage extends StatelessWidget {
             ),
             SizedBox(height: 15),
             RecipeCardShowcase(),
+            SizedBox(height: 15),
           ],
         ),
       ),

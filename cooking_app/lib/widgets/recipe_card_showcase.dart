@@ -26,25 +26,24 @@ class RecipeCardShowcase extends StatelessWidget {
           ),
           RecipeCard(
             image: 'images/shrimp.png',
-            title: 'Crunchy Nut Coleslaw',
+            title: 'Shrimp Chicken Andouille Sausage Jambalaya',
             rating: 3.5,
             time: '10 Mins',
           ),
           RecipeCard(
             image: 'images/barbecue_chicken.png',
-            title: 'Crunchy Nut Coleslaw',
+            title: 'Barbecue Chicken Jollof Rice',
             rating: 3.5,
             time: '10 Mins',
           ),
           RecipeCard(
             image: 'images/portuguese_piri.png',
-            title: 'Crunchy Nut Coleslaw',
+            title: 'Portuguese Piri Piri Chicken',
             rating: 3.5,
             time: '10 Mins',
           ),
         ],
       ),
     );
-    ;
   }
 }

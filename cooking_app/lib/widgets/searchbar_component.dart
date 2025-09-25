@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SearchBarComponent extends StatelessWidget {
   final ValueChanged<String>? onChanged;
 
-  const SearchBarComponent({Key? key, this.onChanged}) : super(key: key);
+  const SearchBarComponent({super.key, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
