@@ -8,7 +8,7 @@ class HeaderComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(24.0),
+      padding: const EdgeInsets.only(top: 20, left: 30, right: 30, bottom: 15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +31,7 @@ class HeaderComponent extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 11,
                       fontWeight: FontWeight.w400,
-                      color: AppColors.neutralGray3,
+                      color: AppColors.gray3,
                     ),
                   ),
                 ],
