@@ -1,5 +1,7 @@
+import 'package:cooking_app/resources/app_icons.dart';
 import 'package:cooking_app/resources/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SearchBarComponent extends StatelessWidget {
   final ValueChanged<String>? onChanged;
@@ -25,11 +27,7 @@ class SearchBarComponent extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Image.asset(
-                    'images/search-normal.png',
-                    width: 18,
-                    height: 18,
-                  ),
+                  child: SvgPicture.asset('assets/images/search-normal.svg'),
                 ),
                 Expanded(
                   child: TextField(
@@ -53,10 +51,17 @@ class SearchBarComponent extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Container(
-              width: 48,
-              height: 48,
+              width: 40,
+              height: 40,
               color: AppColors.primary100,
-              child: Image.asset('images/setting-4.png'),
+              child: Center(
+                child: SvgPicture.asset(
+                  AppIcons.settingsSvg,
+                  width: 20,
+                  height: 20,
+                  fit: BoxFit.contain,
+                ),
+              ),
             ),
           ),
         ],

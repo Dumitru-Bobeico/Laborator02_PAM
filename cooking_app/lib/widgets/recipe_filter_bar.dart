@@ -18,7 +18,7 @@ class _RecipeFilterBarState extends State<RecipeFilterBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 10),
+      padding: EdgeInsets.only(top: 10, left: 10),
       child: SizedBox(
         height: 40,
         child: ListView.separated(

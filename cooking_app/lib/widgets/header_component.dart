@@ -1,4 +1,6 @@
+import 'package:cooking_app/resources/app_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../resources/colors.dart';
 
@@ -39,10 +41,17 @@ class HeaderComponent extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Container(
-                  width: 48,
-                  height: 48,
+                  width: 40,
+                  height: 40,
                   color: AppColors.secondary40,
-                  child: Image.asset('images/profile_picture.png'),
+                  child: Center(
+                    child: Image.asset(
+                      AppIcons.avatar,
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
                 ),
               ),
             ],
