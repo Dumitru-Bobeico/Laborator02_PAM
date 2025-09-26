@@ -1,127 +1,172 @@
+import 'package:cooking_app/resources/app_icons.dart';
+import 'package:cooking_app/resources/colors.dart';
 import 'package:flutter/material.dart';
-import '../resources/colors.dart';
+
+const String _imageUrl = AppIcons.classicGreekSalad;
 
 class RecipeCard extends StatelessWidget {
-  final String image;
-  final String title;
-  final double rating;
-  final String time;
-  final VoidCallback? onBookmark;
-  final VoidCallback? onTap;
-
-  const RecipeCard({
-    Key? key,
-    required this.image,
-    required this.title,
-    required this.rating,
-    required this.time,
-    this.onBookmark,
-    this.onTap,
-  }) : super(key: key);
+  const RecipeCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: AppColors.gray4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: InkWell(
-        onTap: onTap,
-        splashColor: AppColors.primary100.withAlpha(50),
-        child: SizedBox(
-          width: 150,
-          height: 176,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Stack(
-                      children: [
-                        Image.asset(
-                          image,
-                          width: double.infinity,
-                          height: 100,
-                          fit: BoxFit.cover,
-                        ),
-                        Positioned(
-                          top: 8,
-                          right: 8,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 6,
-                              vertical: 2,
-                            ),
-                            decoration: BoxDecoration(
-                              color: AppColors.primary100,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Row(
-                              children: [
-                                const Icon(
-                                  Icons.star,
-                                  size: 12,
-                                  color: Colors.white,
-                                ),
-                                const SizedBox(width: 2),
-                                Text(
-                                  rating.toString(),
-                                  style: const TextStyle(
-                                    fontSize: 10,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+    const double cardWidth = 200.0;
+    const double imageDiameter = 140.0;
+    const double overlap = 20.0;
+
+    return SizedBox(
+      width: cardWidth,
+      child: Stack(
+        clipBehavior: Clip.none,
+        alignment: Alignment.topCenter,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: imageDiameter / 2 - overlap),
+            child: Container(
+              padding: const EdgeInsets.all(20.0),
+              decoration: BoxDecoration(
+                color: const Color(0xFFF7F7F7),
+                borderRadius: BorderRadius.circular(30.0),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withAlpha(13),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: imageDiameter / 2 + overlap),
+                  const Text(
+                    'Classic Greek\nSalad',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF333333),
+                      height: 1.1,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        title,
-                        style: const TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                  ),
+                  const SizedBox(height: 25),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
                           Text(
-                            time,
-                            style: const TextStyle(
-                              fontSize: 11,
-                              color: AppColors.gray4,
-                            ),
+                            'Time',
+                            style: TextStyle(fontSize: 14, color: Colors.grey),
                           ),
-                          GestureDetector(
-                            onTap: onBookmark,
-                            child: const Icon(
-                              Icons.bookmark_border,
-                              size: 18,
-                              color: AppColors.gray4,
+                          Text(
+                            '15 Mins',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF333333),
                             ),
                           ),
                         ],
                       ),
-                    ),
-                  ],
-                ),
+                      Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.grey.shade300),
+                        ),
+                        child: const Icon(
+                          Icons.bookmark_border,
+                          color: Colors.grey,
+                          size: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              const SizedBox(height: 8), // bottom padding
+            ),
+          ),
+          _ImageWithRating(diameter: imageDiameter, imageUrl: _imageUrl),
+        ],
+      ),
+    );
+  }
+}
+
+class _ImageWithRating extends StatelessWidget {
+  final double diameter;
+  final String imageUrl;
+
+  const _ImageWithRating({required this.diameter, required this.imageUrl});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          width: diameter,
+          height: diameter,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withAlpha(38),
+                spreadRadius: 1,
+                blurRadius: 15,
+                offset: const Offset(0, 5),
+              ),
             ],
+            image: DecorationImage(
+              image: AssetImage(imageUrl),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-      ),
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            decoration: BoxDecoration(
+              color: AppColors.secondary20,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: const [
+                Icon(Icons.star, color: Colors.white, size: 14),
+                SizedBox(width: 4),
+                Text(
+                  '4.5',
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class RecipeCardDemo extends StatelessWidget {
+  const RecipeCardDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(child: RecipeCard()),
     );
   }
 }
