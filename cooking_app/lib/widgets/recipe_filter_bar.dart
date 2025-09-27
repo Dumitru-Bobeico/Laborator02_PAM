@@ -5,8 +5,7 @@ class RecipeFilterBar extends StatefulWidget {
   final List<String> categories;
   final ValueChanged<String>? onSelected;
 
-  const RecipeFilterBar({Key? key, required this.categories, this.onSelected})
-    : super(key: key);
+  const RecipeFilterBar({super.key, required this.categories, this.onSelected});
 
   @override
   State<RecipeFilterBar> createState() => _RecipeFilterBarState();
