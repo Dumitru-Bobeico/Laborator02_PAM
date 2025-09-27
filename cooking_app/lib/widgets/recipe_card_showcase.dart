@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'recipe_card.dart';
-import 'package:cooking_app/resources/app_icons.dart'; // make sure you import icons
+import 'package:cooking_app/resources/app_icons.dart';
 
 class Recipe {
   final String title;
@@ -30,30 +30,29 @@ class RecipeCardShowcase extends StatelessWidget {
       rating: 4.5,
     ),
     Recipe(
-      title: 'Italian Pizza',
+      title: 'Crunchy Nut Coleslaw',
       imageUrl: AppIcons.crunchyCholeslaw,
       time: '25 Mins',
       rating: 4.7,
     ),
     Recipe(
-      title: 'Fruit Bowl',
+      title: 'Shrimp Chicken Andouille',
       imageUrl: AppIcons.shrimpDish,
       time: '10 Mins',
       rating: 4.2,
     ),
     Recipe(
-      title: 'Sushi',
+      title: 'Barbecue Chicken Jollof Rice',
       imageUrl: AppIcons.barbecueChicken,
       time: '30 Mins',
       rating: 4.8,
     ),
     Recipe(
-      title: 'Burger',
+      title: 'Portuguese Piri Piri Chicken',
       imageUrl: AppIcons.portuguesePiri,
       time: '20 Mins',
       rating: 4.3,
     ),
-    // add more recipes if needed
   ];
 
   @override

@@ -1,5 +1,7 @@
+import 'package:cooking_app/resources/app_icons.dart';
 import 'package:cooking_app/resources/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class _ImageWithRating extends StatelessWidget {
   final double diameter;
@@ -30,11 +32,8 @@ class _ImageWithRating extends StatelessWidget {
                 offset: const Offset(0, 5),
               ),
             ],
-            image: DecorationImage(
-              image: AssetImage(imageUrl),
-              fit: BoxFit.cover,
-            ),
           ),
+          child: ClipOval(child: Image.asset(imageUrl, fit: BoxFit.cover)),
         ),
         Positioned(
           bottom: 0,
@@ -48,7 +47,7 @@ class _ImageWithRating extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(Icons.star, color: Colors.white, size: 14),
+                SvgPicture.asset(AppIcons.star, width: 14, height: 14),
                 const SizedBox(width: 4),
                 Text(
                   rating.toString(),
@@ -84,7 +83,7 @@ class RecipeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double cardWidth = 200.0;
-    const double imageDiameter = 140.0;
+    const double imageDiameter = 110.0;
     const double overlap = 20.0;
 
     return SizedBox(

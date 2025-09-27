@@ -9,4 +9,5 @@ class AppIcons {
   static const String crunchyCholeslaw =
       "assets/images/crunchy_nut_choleslaw.png";
   static const String portuguesePiri = "assets/images/portuguese_piri.png";
+  static const String star = "assets/images/star.svg";
 }
