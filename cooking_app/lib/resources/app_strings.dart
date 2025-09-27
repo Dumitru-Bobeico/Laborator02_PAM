@@ -1,15 +1,12 @@
 class AppStrings {
-  static const String login = "Login";
-  static const String signup = "Sign Up";
-  static const String email = "Email";
-  static const String password = "Password";
-
-  static const String errorGeneral = "Something went wrong. Please try again.";
-  static const String errorInvalidEmail = "Invalid email format";
-  static const String errorEmptyField = "This field cannot be empty";
-
-  static const String ok = "OK";
-  static const String cancel = "Cancel";
-  static const String settings = "Settings";
-  static const String profile = "Profile";
+  static const String filterAll = "All";
+  static const String filterIndian = "Indian";
+  static const String filterItalian = "Italian";
+  static const String filterAsian = "Asian";
+  static const String filterChinese = "Chinese";
+  static const String filterFruit = "Fruit";
+  static const String filterVegetables = "Vegetables";
+  static const String filterProtein = "Protein";
+  static const String filterCereal = "Cereal";
+  static const String filterLocalDishes = "Local Dishes";
 }

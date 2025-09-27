@@ -1,3 +1,4 @@
+import 'package:cooking_app/resources/app_strings.dart';
 import 'package:cooking_app/widgets/recipe_card.dart';
 import 'package:cooking_app/widgets/recipe_filter_bar.dart';
 import 'package:cooking_app/widgets/searchbar_component.dart';
@@ -20,7 +21,18 @@ class MainPage extends StatelessWidget {
             SearchBarComponent(),
             SizedBox(height: 15),
             RecipeFilterBar(
-              categories: ['All', 'Popular', 'Newest', 'Recommended'],
+              categories: [
+                AppStrings.filterAll,
+                AppStrings.filterIndian,
+                AppStrings.filterItalian,
+                AppStrings.filterAsian,
+                AppStrings.filterChinese,
+                AppStrings.filterFruit,
+                AppStrings.filterVegetables,
+                AppStrings.filterProtein,
+                AppStrings.filterCereal,
+                AppStrings.filterLocalDishes,
+              ],
             ),
             RecipeCard(),
           ],
