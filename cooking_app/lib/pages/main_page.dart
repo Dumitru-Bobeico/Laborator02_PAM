@@ -1,5 +1,5 @@
 import 'package:cooking_app/resources/app_strings.dart';
-import 'package:cooking_app/widgets/recipe_card.dart';
+import 'package:cooking_app/widgets/recipe_card_showcase.dart';
 import 'package:cooking_app/widgets/recipe_filter_bar.dart';
 import 'package:cooking_app/widgets/searchbar_component.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,8 @@ class MainPage extends StatelessWidget {
                 AppStrings.filterLocalDishes,
               ],
             ),
-            RecipeCard(),
+            SizedBox(height: 15),
+            RecipeCardShowcase(count: 4),
           ],
         ),
       ),
