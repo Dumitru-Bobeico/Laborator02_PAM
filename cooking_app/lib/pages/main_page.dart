@@ -35,7 +35,7 @@ class MainPage extends StatelessWidget {
               ],
             ),
             SizedBox(height: 15),
-            RecipeCardShowcase(count: 4),
+            RecipeCardShowcase(count: 5),
           ],
         ),
       ),

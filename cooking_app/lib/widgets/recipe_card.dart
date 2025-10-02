@@ -21,18 +21,7 @@ class _ImageWithRating extends StatelessWidget {
         Container(
           width: diameter,
           height: diameter,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withAlpha(38),
-                spreadRadius: 1,
-                blurRadius: 15,
-                offset: const Offset(0, 5),
-              ),
-            ],
-          ),
+          decoration: BoxDecoration(shape: BoxShape.circle),
           child: ClipOval(child: Image.asset(imageUrl, fit: BoxFit.cover)),
         ),
         Positioned(
@@ -82,9 +71,8 @@ class RecipeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double cardWidth = 200.0;
+    const double cardWidth = 150.0;
     const double imageDiameter = 110.0;
-    const double overlap = 20.0;
 
     return SizedBox(
       width: cardWidth,
@@ -93,12 +81,12 @@ class RecipeCard extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: imageDiameter / 2 - overlap),
+            padding: const EdgeInsets.only(top: imageDiameter / 2),
             child: Container(
               padding: const EdgeInsets.all(20.0),
               decoration: BoxDecoration(
-                color: const Color(0xFFF7F7F7),
-                borderRadius: BorderRadius.circular(30.0),
+                color: AppColors.gray4,
+                borderRadius: BorderRadius.circular(12.0),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withAlpha(13),
@@ -112,15 +100,15 @@ class RecipeCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: imageDiameter / 2 + overlap),
+                  SizedBox(height: imageDiameter / 2),
                   Text(
                     title,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppins',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600,
                       color: Color(0xFF333333),
-                      height: 1.1,
                     ),
                   ),
                   const SizedBox(height: 25),
@@ -132,13 +120,18 @@ class RecipeCard extends StatelessWidget {
                         children: [
                           const Text(
                             'Time',
-                            style: TextStyle(fontSize: 14, color: Colors.grey),
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 11,
+                              color: Colors.grey,
+                            ),
                           ),
                           Text(
                             time,
                             style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Poppins',
+                              fontSize: 11,
+                              fontWeight: FontWeight.w600,
                               color: Color(0xFF333333),
                             ),
                           ),
@@ -152,10 +145,11 @@ class RecipeCard extends StatelessWidget {
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.grey.shade300),
                         ),
-                        child: const Icon(
-                          Icons.bookmark_border,
-                          color: Colors.grey,
-                          size: 20,
+                        child: SvgPicture.asset(
+                          AppIcons.bookmarkIcon,
+                          width: 16,
+                          height: 16,
+                          fit: BoxFit.contain,
                         ),
                       ),
                     ],

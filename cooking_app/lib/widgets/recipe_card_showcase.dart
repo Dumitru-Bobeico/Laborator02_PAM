@@ -21,7 +21,6 @@ class RecipeCardShowcase extends StatelessWidget {
 
   const RecipeCardShowcase({super.key, this.count = 4});
 
-  // Define the recipe list inside the showcase
   static final List<Recipe> _recipes = [
     Recipe(
       title: 'Classic Greek Salad',
@@ -32,7 +31,7 @@ class RecipeCardShowcase extends StatelessWidget {
     Recipe(
       title: 'Crunchy Nut Coleslaw',
       imageUrl: AppIcons.crunchyCholeslaw,
-      time: '25 Mins',
+      time: '10 Mins',
       rating: 4.7,
     ),
     Recipe(
@@ -42,22 +41,21 @@ class RecipeCardShowcase extends StatelessWidget {
       rating: 4.2,
     ),
     Recipe(
-      title: 'Barbecue Chicken Jollof Rice',
+      title: 'Barbecue Chicken Rice',
       imageUrl: AppIcons.barbecueChicken,
-      time: '30 Mins',
+      time: '10 Mins',
       rating: 4.8,
     ),
     Recipe(
       title: 'Portuguese Piri Piri Chicken',
       imageUrl: AppIcons.portuguesePiri,
-      time: '20 Mins',
+      time: '10 Mins',
       rating: 4.3,
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    // Limit recipes to the count requested
     final recipesToShow = _recipes.take(count).toList();
 
     return SingleChildScrollView(
