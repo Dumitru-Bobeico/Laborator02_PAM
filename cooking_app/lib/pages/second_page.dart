@@ -26,9 +26,8 @@ class SecondPage extends StatelessWidget {
             UserProfileStaticHeader(
               userName: 'Laura wilson',
               location: 'Lagos, Nigeria',
-              profileImageUrl:
-                  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=80&q=80',
             ),
+            SizedBox(height: 25),
           ],
         ),
       ),

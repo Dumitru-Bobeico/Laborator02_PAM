@@ -20,4 +20,5 @@ class AppIcons {
   static const String moreButton = "assets/images/more-icon.svg";
   static const String carouselBurger = "assets/images/carousel_burger.png";
   static const String followProfile = "assets/images/follow_profile.png";
+  static const String location = "assets/images/location.svg";
 }

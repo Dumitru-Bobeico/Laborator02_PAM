@@ -1,11 +1,11 @@
 import 'package:cooking_app/resources/app_icons.dart';
 import 'package:cooking_app/resources/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class UserProfileStaticHeader extends StatelessWidget {
   final String userName;
   final String location;
-  final String profileImageUrl;
 
   static const Color _tealActive = AppColors.primary100;
   static const Color _tealInactive = AppColors.primary80;
@@ -14,7 +14,6 @@ class UserProfileStaticHeader extends StatelessWidget {
     super.key,
     required this.userName,
     required this.location,
-    required this.profileImageUrl,
   });
 
   @override
@@ -51,19 +50,28 @@ class UserProfileStaticHeader extends StatelessWidget {
               Text(
                 userName,
                 style: const TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.black,
                 ),
               ),
               const SizedBox(height: 2.0),
               Row(
                 children: <Widget>[
-                  const Icon(Icons.location_on, color: Colors.grey, size: 16.0),
+                  SvgPicture.asset(
+                    AppIcons.location,
+                    width: 16,
+                    height: 16,
+                    fit: BoxFit.contain,
+                  ),
                   const SizedBox(width: 4.0),
                   Text(
                     location,
-                    style: const TextStyle(fontSize: 14.0, color: Colors.grey),
+                    style: const TextStyle(
+                      fontSize: 11.0,
+                      color: AppColors.gray3,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ],
               ),
