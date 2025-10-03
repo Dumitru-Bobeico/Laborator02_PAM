@@ -12,4 +12,8 @@ class AppIcons {
   static const String star = "assets/images/star.svg";
   static const String bookmarkIcon = "assets/images/bookmark-icon.svg";
   static const String bookmarkGrayIcon = "assets/images/bookmark-gray.svg";
+  static const String clockWatch = "assets/images/timer.svg";
+  static const String bottomCreator01 = "assets/images/bottom_creator_01.svg";
+  static const String bottomCreator01PNG =
+      "assets/images/bottom_creator_01.png";
 }

@@ -1,5 +1,5 @@
-import 'package:cooking_app/pages/second_page.dart';
 import 'package:cooking_app/resources/app_strings.dart';
+import 'package:cooking_app/widgets/bottom_slider.dart';
 import 'package:cooking_app/widgets/recipe_card_showcase.dart';
 import 'package:cooking_app/widgets/recipe_filter_bar.dart';
 import 'package:cooking_app/widgets/searchbar_component.dart';
@@ -54,15 +54,7 @@ class MainPage extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondPage()),
-                );
-              },
-              child: Text("Go to Second Page"),
-            ),
+            BottomSlider(),
           ],
         ),
       ),

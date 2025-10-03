@@ -60,7 +60,7 @@ class RecipeCardShowcase extends StatelessWidget {
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Row(
         children: recipesToShow.map((recipe) {
           return Padding(
