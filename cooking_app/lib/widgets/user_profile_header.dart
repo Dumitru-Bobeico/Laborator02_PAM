@@ -132,7 +132,7 @@ class UserProfileStaticHeader extends StatelessWidget {
           ),
         ),
 
-        Container(
+        SizedBox(
           height: 33.0,
           width: 150,
           child: const Center(

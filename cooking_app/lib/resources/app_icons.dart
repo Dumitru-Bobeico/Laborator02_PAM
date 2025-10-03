@@ -21,4 +21,9 @@ class AppIcons {
   static const String carouselBurger = "assets/images/carousel_burger.png";
   static const String followProfile = "assets/images/follow_profile.png";
   static const String location = "assets/images/location.svg";
+  static const String serveIcon = "assets/images/serve.svg";
+  static const String tomato = "assets/images/tomato.png";
+  static const String cabbage = "assets/images/cabbage.png";
+  static const String taco = "assets/images/taco.png";
+  static const String sandwich = "assets/images/sandwich.png";
 }
