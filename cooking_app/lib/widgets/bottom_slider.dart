@@ -1,4 +1,6 @@
+import 'package:cooking_app/resources/app_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class BottomSlider extends StatelessWidget {
   const BottomSlider({super.key});
@@ -11,7 +13,7 @@ class BottomSlider extends StatelessWidget {
         'author': 'James Milner',
         'time': '20 mins',
         'rating': 5.0,
-        'imageAsset': 'assets/steak_image.jpg',
+        'imageAsset': 'assets/images/bottom_food01.png',
         'creatorImageAsset': 'assets/images/bottom_creator_01.png',
       },
       {
@@ -19,7 +21,7 @@ class BottomSlider extends StatelessWidget {
         'author': 'Laura S.',
         'time': '35 mins',
         'rating': 5.0,
-        'imageAsset': 'assets/pilaf_image.jpg',
+        'imageAsset': 'assets/images/bottom_food01.png',
         'creatorImageAsset': 'assets/images/bottom_creator_02.png',
       },
       {
@@ -27,7 +29,7 @@ class BottomSlider extends StatelessWidget {
         'author': 'Laura S.',
         'time': '35 mins',
         'rating': 5.0,
-        'imageAsset': 'assets/pilaf_image.jpg',
+        'imageAsset': 'assets/images/bottom_food01.png',
         'creatorImageAsset': 'assets/images/bottom_creator_02.png',
       },
       {
@@ -35,7 +37,7 @@ class BottomSlider extends StatelessWidget {
         'author': 'Laura S.',
         'time': '35 mins',
         'rating': 5.0,
-        'imageAsset': 'assets/pilaf_image.jpg',
+        'imageAsset': 'assets/images/bottom_food01.png',
         'creatorImageAsset': 'assets/images/bottom_creator_02.png',
       },
       {
@@ -43,28 +45,31 @@ class BottomSlider extends StatelessWidget {
         'author': 'Laura S.',
         'time': '35 mins',
         'rating': 5.0,
-        'imageAsset': 'assets/pilaf_image.jpg',
+        'imageAsset': 'assets/images/bottom_food01.png',
         'creatorImageAsset': 'assets/images/bottom_creator_02.png',
       },
     ];
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: recipes.map((recipe) {
-          return Padding(
-            padding: const EdgeInsets.only(right: 20.0, bottom: 20.0),
-            child: _RecipeCard(
-              title: recipe['title'],
-              author: recipe['author'],
-              time: recipe['time'],
-              rating: recipe['rating'],
-              imageAsset: recipe['imageAsset'],
-              creatorImageAsset: recipe['creatorImageAsset'],
-            ),
-          );
-        }).toList(),
+      child: Padding(
+        padding: EdgeInsetsGeometry.only(left: 30),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: recipes.map((recipe) {
+            return Padding(
+              padding: const EdgeInsets.only(right: 20.0, bottom: 20.0),
+              child: _RecipeCard(
+                title: recipe['title'],
+                author: recipe['author'],
+                time: recipe['time'],
+                rating: recipe['rating'],
+                imageAsset: recipe['imageAsset'],
+                creatorImageAsset: recipe['creatorImageAsset'],
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }
@@ -144,7 +149,7 @@ class _RecipeCard extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    const Icon(Icons.access_time, size: 18, color: Colors.grey),
+                    SvgPicture.asset(AppIcons.clockWatch),
                     const SizedBox(width: 4),
                     Text(
                       time,
