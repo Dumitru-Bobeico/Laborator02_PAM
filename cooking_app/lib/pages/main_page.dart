@@ -38,12 +38,7 @@ class MainPage extends StatelessWidget {
             SizedBox(height: 25),
             RecipeCardShowcase(count: 5),
             Padding(
-              padding: const EdgeInsets.only(
-                top: 20,
-                left: 30,
-                right: 30,
-                bottom: 15,
-              ),
+              padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
               child: Text(
                 'New Recipes',
                 style: TextStyle(
