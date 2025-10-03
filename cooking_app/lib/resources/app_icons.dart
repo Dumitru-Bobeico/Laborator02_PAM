@@ -18,4 +18,6 @@ class AppIcons {
       "assets/images/bottom_creator_01.png";
   static const String arrowLeft = "assets/images/arrow-left.svg";
   static const String moreButton = "assets/images/more-icon.svg";
+  static const String carouselBurger = "assets/images/carousel_burger.png";
+  static const String followProfile = "assets/images/follow_profile.png";
 }

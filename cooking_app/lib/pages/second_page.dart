@@ -1,6 +1,7 @@
 import 'package:cooking_app/resources/colors.dart';
 import 'package:cooking_app/widgets/back_to_menu.dart';
 import 'package:cooking_app/widgets/food_card.dart';
+import 'package:cooking_app/widgets/food_title.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
@@ -10,7 +11,20 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: SafeArea(child: Column(children: [BackToMenuBar(), FoodCard()])),
+      body: SafeArea(
+        child: Column(
+          children: [
+            BackToMenuBar(),
+            FoodCard(),
+            SizedBox(height: 15),
+            FoodTitleWithReviews(
+              titleLine1: 'Spicy chicken burger with',
+              titleLine2: 'French fries',
+              reviewsCount: '13k',
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -14,36 +14,38 @@ class BackToMenuBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.white,
-      elevation: 0,
+    return Padding(
+      padding: EdgeInsetsGeometry.only(left: 20, right: 30),
+      child: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
 
-      title: null,
+        title: null,
 
-      leading: IconButton(
-        icon: SvgPicture.asset(
-          AppIcons.arrowLeft,
-          colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
-          height: 24,
-          width: 24,
-        ),
-        onPressed: onBackButtonPressed ?? () => Navigator.of(context).pop(),
-      ),
-
-      actions: <Widget>[
-        IconButton(
+        leading: IconButton(
           icon: SvgPicture.asset(
-            AppIcons.moreButton,
+            AppIcons.arrowLeft,
             colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
-            height: 24,
-            width: 24,
+            height: 20,
+            width: 20,
           ),
-          onPressed: onMenuButtonPressed ?? () {},
+          onPressed: onBackButtonPressed ?? () => Navigator.of(context).pop(),
         ),
-        const SizedBox(width: 4.0),
-      ],
 
-      iconTheme: const IconThemeData(color: Colors.black),
+        actions: <Widget>[
+          IconButton(
+            icon: SvgPicture.asset(
+              AppIcons.moreButton,
+              colorFilter: ColorFilter.mode(Colors.black, BlendMode.srcIn),
+              height: 24,
+              width: 24,
+            ),
+            onPressed: onMenuButtonPressed ?? () {},
+          ),
+        ],
+
+        iconTheme: const IconThemeData(color: Colors.black),
+      ),
     );
   }
 

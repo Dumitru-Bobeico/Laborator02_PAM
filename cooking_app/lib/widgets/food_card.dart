@@ -1,4 +1,7 @@
+import 'package:cooking_app/resources/app_icons.dart';
+import 'package:cooking_app/resources/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class FoodCard extends StatelessWidget {
   final String imageUrl;
@@ -7,114 +10,120 @@ class FoodCard extends StatelessWidget {
 
   const FoodCard({
     super.key,
-    this.imageUrl =
-        'https://images.unsplash.com/photo-1568901346537-2dea8d655d49?fit=crop&w=800&q=80',
+    this.imageUrl = AppIcons.carouselBurger,
     this.rating = 4.0,
     this.timeInMinutes = 20,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4.0,
-      clipBehavior: Clip.antiAlias,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-      child: SizedBox(
-        height: 200,
-        child: Stack(
-          fit: StackFit.expand,
-          children: <Widget>[
-            Image.network(
-              imageUrl,
-              fit: BoxFit.cover,
-              color: Colors.black.withAlpha(1),
-              colorBlendMode: BlendMode.darken,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  color: Colors.grey[300],
-                  child: const Center(
-                    child: Icon(
-                      Icons.broken_image,
-                      size: 48,
-                      color: Colors.grey,
-                    ),
+    return Padding(
+      padding: EdgeInsetsGeometry.only(left: 30, right: 30),
+      child: Card(
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.0),
+        ),
+        child: SizedBox(
+          height: 150,
+          child: Stack(
+            fit: StackFit.expand,
+            children: <Widget>[
+              Image.asset(imageUrl, fit: BoxFit.cover),
+              Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [
+                      Colors.black.withAlpha(200),
+                      Colors.black.withAlpha(0),
+                    ],
                   ),
-                );
-              },
-            ),
-
-            Positioned(
-              top: 10.0,
-              right: 10.0,
-              child: Chip(
-                avatar: const Icon(Icons.star, color: Colors.white, size: 16.0),
-                label: Text(
-                  rating.toStringAsFixed(1),
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                backgroundColor: Colors.black54,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 4.0,
-                  vertical: 2.0,
                 ),
               ),
-            ),
 
-            Positioned(
-              bottom: 10.0,
-              right: 10.0,
-              child: Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0,
-                      vertical: 4.0,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        const Icon(
-                          Icons.access_time,
-                          color: Colors.black,
-                          size: 20.0,
-                        ),
-                        const SizedBox(width: 4.0),
-                        Text(
-                          '$timeInMinutes min',
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+              Positioned(
+                top: 10.0,
+                right: 10.0,
+                child: Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 7,
+                    vertical: 2.5,
                   ),
-                  const SizedBox(width: 8.0),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
-                    child: IconButton(
-                      icon: const Icon(
-                        Icons.bookmark_remove_outlined,
-                        color: Colors.black,
+                  decoration: BoxDecoration(
+                    color: AppColors.secondary20,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SvgPicture.asset(AppIcons.star, width: 10, height: 10),
+                      const SizedBox(width: 4),
+                      Text(
+                        rating.toString(),
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.black,
+                        ),
                       ),
-                      onPressed: () {},
-                      padding: EdgeInsets.zero,
-                      constraints: const BoxConstraints(),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+              Positioned(
+                bottom: 10.0,
+                right: 10.0,
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0,
+                        vertical: 4.0,
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          SvgPicture.asset(
+                            AppIcons.clockWatch,
+                            color: AppColors.white,
+                          ),
+                          const SizedBox(width: 4.0),
+                          Text(
+                            '$timeInMinutes min',
+                            style: const TextStyle(
+                              fontSize: 11,
+                              color: AppColors.white,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 24,
+                      height: 24,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: IconButton(
+                        icon: SvgPicture.asset(
+                          AppIcons.bookmarkIcon,
+                          width: 16,
+                          height: 16,
+                          fit: BoxFit.contain,
+                        ),
+                        onPressed: () {},
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
