@@ -32,25 +32,25 @@ class RecipeCardShowcase extends StatelessWidget {
       title: 'Crunchy Nut Coleslaw',
       imageUrl: AppIcons.crunchyCholeslaw,
       time: '10 Mins',
-      rating: 4.7,
+      rating: 3.5,
     ),
     Recipe(
       title: 'Shrimp Chicken Andouille',
       imageUrl: AppIcons.shrimpDish,
       time: '10 Mins',
-      rating: 4.2,
+      rating: 3.0,
     ),
     Recipe(
       title: 'Barbecue Chicken Rice',
       imageUrl: AppIcons.barbecueChicken,
       time: '10 Mins',
-      rating: 4.8,
+      rating: 4.5,
     ),
     Recipe(
       title: 'Portuguese Piri Piri Chicken',
       imageUrl: AppIcons.portuguesePiri,
       time: '10 Mins',
-      rating: 4.3,
+      rating: 4.5,
     ),
   ];
 

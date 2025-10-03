@@ -177,7 +177,6 @@ class _RecipeCard extends StatelessWidget {
                   image: AssetImage(imageAsset),
                   fit: BoxFit.cover,
                 ),
-                border: Border.all(color: Colors.white, width: 4),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withAlpha(100),

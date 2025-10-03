@@ -16,4 +16,6 @@ class AppIcons {
   static const String bottomCreator01 = "assets/images/bottom_creator_01.svg";
   static const String bottomCreator01PNG =
       "assets/images/bottom_creator_01.png";
+  static const String arrowLeft = "assets/images/arrow-left.svg";
+  static const String moreButton = "assets/images/more-icon.svg";
 }
