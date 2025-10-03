@@ -1,3 +1,4 @@
+import 'package:cooking_app/pages/second_page.dart';
 import 'package:cooking_app/resources/app_icons.dart';
 import 'package:cooking_app/resources/colors.dart';
 import 'package:flutter/material.dart';
@@ -74,97 +75,106 @@ class RecipeCard extends StatelessWidget {
     const double cardWidth = 150.0;
     const double imageDiameter = 110.0;
 
-    return SizedBox(
-      width: cardWidth,
-      child: Stack(
-        clipBehavior: Clip.none,
-        alignment: Alignment.topCenter,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: imageDiameter / 3),
-            child: Container(
-              padding: const EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                color: AppColors.gray4,
-                borderRadius: BorderRadius.circular(12.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withAlpha(13),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(height: imageDiameter / 2),
-                  Text(
-                    title,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF333333),
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const SecondPage()),
+        );
+      },
+      child: SizedBox(
+        width: cardWidth,
+        child: Stack(
+          clipBehavior: Clip.none,
+          alignment: Alignment.topCenter,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: imageDiameter / 3),
+              child: Container(
+                padding: const EdgeInsets.all(20.0),
+                decoration: BoxDecoration(
+                  color: AppColors.gray4,
+                  borderRadius: BorderRadius.circular(12.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withAlpha(13),
+                      spreadRadius: 2,
+                      blurRadius: 10,
+                      offset: const Offset(0, 5),
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text(
-                            'Time',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 11,
-                              color: Colors.grey,
+                  ],
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: imageDiameter / 2),
+                    Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF333333),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Time',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 11,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            Text(
+                              time,
+                              style: const TextStyle(
+                                fontFamily: 'Poppins',
+                                fontSize: 11,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF333333),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            border: Border.all(color: Colors.grey.shade300),
+                          ),
+                          child: Center(
+                            child: SvgPicture.asset(
+                              AppIcons.bookmarkGrayIcon,
+                              width: 16,
+                              height: 16,
+                              fit: BoxFit.contain,
                             ),
                           ),
-                          Text(
-                            time,
-                            style: const TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
-                              color: Color(0xFF333333),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        width: 24,
-                        height: 24,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                          border: Border.all(color: Colors.grey.shade300),
                         ),
-                        child: Center(
-                          child: SvgPicture.asset(
-                            AppIcons.bookmarkGrayIcon,
-                            width: 16,
-                            height: 16,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          _ImageWithRating(
-            diameter: imageDiameter,
-            imageUrl: imageUrl,
-            rating: rating,
-          ),
-        ],
+            _ImageWithRating(
+              diameter: imageDiameter,
+              imageUrl: imageUrl,
+              rating: rating,
+            ),
+          ],
+        ),
       ),
     );
   }
