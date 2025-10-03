@@ -34,8 +34,25 @@ class MainPage extends StatelessWidget {
                 AppStrings.filterLocalDishes,
               ],
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 25),
             RecipeCardShowcase(count: 5),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+                left: 30,
+                right: 30,
+                bottom: 15,
+              ),
+              child: Text(
+                'New Recipes',
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.black,
+                ),
+              ),
+            ),
           ],
         ),
       ),

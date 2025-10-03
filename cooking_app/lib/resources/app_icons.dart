@@ -11,4 +11,5 @@ class AppIcons {
   static const String portuguesePiri = "assets/images/portuguese_piri.png";
   static const String star = "assets/images/star.svg";
   static const String bookmarkIcon = "assets/images/bookmark-icon.svg";
+  static const String bookmarkGrayIcon = "assets/images/bookmark-gray.svg";
 }

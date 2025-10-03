@@ -25,10 +25,10 @@ class _ImageWithRating extends StatelessWidget {
           child: ClipOval(child: Image.asset(imageUrl, fit: BoxFit.cover)),
         ),
         Positioned(
-          bottom: 0,
+          bottom: 75,
           right: 0,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2.5),
             decoration: BoxDecoration(
               color: AppColors.secondary20,
               borderRadius: BorderRadius.circular(20),
@@ -36,14 +36,14 @@ class _ImageWithRating extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SvgPicture.asset(AppIcons.star, width: 14, height: 14),
+                SvgPicture.asset(AppIcons.star, width: 10, height: 10),
                 const SizedBox(width: 4),
                 Text(
                   rating.toString(),
                   style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    fontSize: 11,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.black,
                   ),
                 ),
               ],
@@ -81,7 +81,7 @@ class RecipeCard extends StatelessWidget {
         alignment: Alignment.topCenter,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: imageDiameter / 2),
+            padding: const EdgeInsets.only(top: imageDiameter / 3),
             child: Container(
               padding: const EdgeInsets.all(20.0),
               decoration: BoxDecoration(
@@ -111,7 +111,6 @@ class RecipeCard extends StatelessWidget {
                       color: Color(0xFF333333),
                     ),
                   ),
-                  const SizedBox(height: 25),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -138,18 +137,20 @@ class RecipeCard extends StatelessWidget {
                         ],
                       ),
                       Container(
-                        width: 36,
-                        height: 36,
+                        width: 24,
+                        height: 24,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.grey.shade300),
                         ),
-                        child: SvgPicture.asset(
-                          AppIcons.bookmarkIcon,
-                          width: 16,
-                          height: 16,
-                          fit: BoxFit.contain,
+                        child: Center(
+                          child: SvgPicture.asset(
+                            AppIcons.bookmarkGrayIcon,
+                            width: 16,
+                            height: 16,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ],
